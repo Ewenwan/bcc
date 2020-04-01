@@ -16,6 +16,18 @@ BCC makes BPF programs easier to write, with kernel instrumentation in C
 It is suited for many tasks, including performance analysis and network
 traffic control.
 
+> 简介
+
+BPF 是类 Unix 系统上数据链路层的一种原始接口，提供原始链路层封包的收发
+
+BPF 支持过滤数据包——用户态的进程可以提供一个过滤程序来声明它想收到哪些数据包
+
+从 3.18 版本开始，Linux 内核提供了一种扩展的 BPF 虚拟机，被称为 “extended BPF”，简称为 eBPF。它能够被用于非网络相关的功能，比如附在不同的 tracepoints 上，从而获取当前内核运行的许多信息
+
+eBPF 虚拟机使用的是类似于汇编语言的指令，对于程序编写来说直接使用难度非常大。bcc 提供了一个名为 bcc 的 python 库，简化了 eBPF 应用的开发过程，Bcc 收集了大量现成的 eBPF 程序可以直接拿来使用。
+
+
+
 ## Screenshot
 
 This example traces a disk I/O kernel function, and populates an in-kernel
